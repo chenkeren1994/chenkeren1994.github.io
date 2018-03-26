@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[第一篇文章]]></title>
+    <url>%2F2018%2F03%2F26%2F%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0%2F</url>
+    <content type="text"><![CDATA[##厉害了666 123let a = 1;let b = 2;console.log("abc") ###海豹博客正式上线]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>test</tag>
+      </tags>
+  </entry>
+</search>
