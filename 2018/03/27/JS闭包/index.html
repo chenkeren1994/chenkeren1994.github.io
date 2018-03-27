@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="js,闭包,私有变量," />
 
 
 
@@ -81,16 +81,18 @@
 
 
 
-<meta name="description" content="海豹的个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Seal Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="词法作用域12345678function init()&amp;#123;    var a = &quot;seal&quot;;    function show()&amp;#123;        alert(a);    &amp;#125;    show();&amp;#125;init();  // seal">
+<meta name="keywords" content="js,闭包,私有变量">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于JS闭包的理解">
+<meta property="og:url" content="http://yoursite.com/2018/03/27/JS闭包/index.html">
 <meta property="og:site_name" content="Seal Blog">
-<meta property="og:description" content="海豹的个人博客">
+<meta property="og:description" content="词法作用域12345678function init()&amp;#123;    var a = &quot;seal&quot;;    function show()&amp;#123;        alert(a);    &amp;#125;    show();&amp;#125;init();  // seal">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-27T03:10:09.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Seal Blog">
-<meta name="twitter:description" content="海豹的个人博客">
+<meta name="twitter:title" content="关于JS闭包的理解">
+<meta name="twitter:description" content="词法作用域12345678function init()&amp;#123;    var a = &quot;seal&quot;;    function show()&amp;#123;        alert(a);    &amp;#125;    show();&amp;#125;init();  // seal">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/27/JS闭包/"/>
 
 
 
 
 
-  <title>Seal Blog</title>
+  <title>关于JS闭包的理解 | Seal Blog</title>
   
 
 
@@ -145,8 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -239,9 +240,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -271,9 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/27/JS闭包/" itemprop="url">关于JS闭包的理解</a></h1>
+          <h1 class="post-title" itemprop="name headline">关于JS闭包的理解</h1>
         
 
         <div class="post-meta">
@@ -338,154 +337,13 @@
           
 
           
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="词法作用域"><a href="#词法作用域" class="headerlink" title="词法作用域"></a>词法作用域</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">init</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="string">"seal"</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(a);</span><br><span class="line">    &#125;</span><br><span class="line">    show();</span><br><span class="line">&#125;</span><br><span class="line">init();  <span class="comment">// seal</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/27/JS闭包/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/26/css三栏布局/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="lovelyseal">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Seal Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/26/css三栏布局/" itemprop="url">css实现三栏布局</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-26T14:39:24+08:00">
-                2018-03-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
-                  </a>
-                </span>
-
-                
-                
-              
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">阅读数</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
             </span>
           
 
           
-            
-          
-
-          
-          
-
-          
-
-          
 
           
 
@@ -502,19 +360,23 @@
       
 
       
-        
-          <p>1.<strong>浮动解决方法</strong></p>
+        <h2 id="词法作用域"><a href="#词法作用域" class="headerlink" title="词法作用域"></a>词法作用域</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">init</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="string">"seal"</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(a);</span><br><span class="line">    &#125;</span><br><span class="line">    show();</span><br><span class="line">&#125;</span><br><span class="line">init();  <span class="comment">// seal</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p><code>init()</code>创建了一个局部变量a<code>和一个</code>show<code>函数。</code>show()<code>是定义在</code>init()<code>内部的函数，仅在该函数体内可用。</code>show()<code>内没有自己的局部变量，然而它可以访问到外部函数的变量，所以</code>show()<code>可以使用父函数</code>init()<code>中声明的变量</code>a<code>。但是，如果有同名变量</code>a<code>在</code>show()<code>中被定义，则会使用的</code>show()<code>中定义的</code>a` 。</p>
 <blockquote>
-<p>使用float兼容性好，但需要记得清除浮动，处理好周边元素关系。</p>
+<p>词法作用域中使用的域，是变量在代码中声明的位置所决定的。嵌套的函数可以访问在其外部声明的变量。</p>
 </blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/26/css三栏布局/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><blockquote>
+<p>函数对象可以通过作用域链相互关联起来，函数体内部的变量都可以保存在函数作用域内，这种特性在计算机科学文献中称为闭包。</p>
+<p>引用维基百科：<strong>闭包</strong>（<em>Closure</em>）是<strong>词法闭包</strong>（<em>Lexical Closure</em>）的简称，是引用了自由变量的函数。这个被引用的自由变量将和这个函数一同存在，即使已经离开了创造它的环境也不例外。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> test = &#123;&#125;;</span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(test);</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的例子中，test在a中定义，但在setTimeout的参数（函数）中对它保持了引用。当a被执行了，尽管a已经执行完（已经执行完），理论上来说a这个函数执行过程中产生的变量、对象都可以被销毁。但test由于被引用，所以不能随这个函数执行结束而被销毁，直到定时器里的函数被执行掉。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">counter</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        count: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span> n++;&#125;,</span><br><span class="line">        reset: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;n = <span class="number">0</span>;&#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> c = counter(),d = counter();</span><br><span class="line">c.count() <span class="comment">//0</span></span><br><span class="line">d.count() <span class="comment">//0</span></span><br><span class="line">c.reset() </span><br><span class="line">c.count() <span class="comment">//0</span></span><br><span class="line">d.count() <span class="comment">//1</span></span><br></pre></td></tr></table></figure>
+<p>同一作用域下的闭包之间可以共享变量，不同作用域之间互不干扰。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">constfuncs</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> funcs = [];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; <span class="number">10</span>; i++)&#123;</span><br><span class="line">        funcs[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span> i;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> funcs;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> funcs = constfuncs();</span><br><span class="line">funcs[<span class="number">5</span>]()</span><br></pre></td></tr></table></figure>
+<p>上述代码创建了10个闭包，并将其放在数组中，因此它们可以共享变量i。</p>
+
       
     </div>
     
@@ -524,19 +386,74 @@
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.png" alt="lovelyseal 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/aipay.png" alt="lovelyseal 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+            <a href="/tags/闭包/" rel="tag"># 闭包</a>
+          
+            <a href="/tags/私有变量/" rel="tag"># 私有变量</a>
+          
+        </div>
       
 
       
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/26/css三栏布局/" rel="next" title="css实现三栏布局">
+                <i class="fa fa-chevron-left"></i> css实现三栏布局
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </div>
@@ -546,10 +463,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -557,6 +475,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -577,8 +499,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -661,6 +592,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#词法作用域"><span class="nav-number">1.</span> <span class="nav-text">词法作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包"><span class="nav-number">2.</span> <span class="nav-text">闭包</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -811,6 +758,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
