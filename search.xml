@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[二叉树层序遍历]]></title>
+    <url>%2F2018%2F03%2F28%2F%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86%2F</url>
+    <content type="text"><![CDATA[例题 (LeetCode)107. Binary Tree Level Order Traversal II 方法 定义TreeNode存储每个节点和它对应的层级。队列q用于辅助。 代码 123456789101112131415161718192021222324252627282930313233class TreeNode&#123; constructor(node, level)&#123; this.node = node; this.level = level; &#125;&#125;var levelOrderBottom = function(root) &#123; let res = []; let q = []; if(root === null)&#123; return res; &#125; q.push(new TreeNode(root, 0)); while(q.length &gt; 0)&#123; let tNode = q.shift(); let node = tNode.node; let level = tNode.level; if(level === res.length)&#123; res.push([]); &#125; res[level].push(node.val); if(node.left)&#123; q.push(new TreeNode(node.left,level+1)); &#125; if(node.right)&#123; q.push(new TreeNode(node.right,level+1)); &#125; &#125; return res.reverse()&#125;;]]></content>
+      <categories>
+        <category>数据结构与算法</category>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>算法</tag>
+        <tag>数据结构</tag>
+        <tag>树</tag>
+        <tag>二叉树层序遍历</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[JS中this是什么]]></title>
     <url>%2F2018%2F03%2F27%2FJS-this%2F</url>
     <content type="text"><![CDATA[this的绑定规则默认绑定12345function foo() &#123; console.log( this.a);&#125;var a = 2;foo() // 2 直接使用不带任何修饰的函数引用进行调，this默认指向全局对象。严格模式不能将全局对象用于默认绑定。 隐式绑定12345678function foo() &#123; console.log(this.a);&#125;var obj = &#123; a: 2, foo: foo&#125;;obj.foo(); //2 this指向obj对象属性引用链中只有上一层在调用位置中起作用。 隐式丢失12345678910function foo() &#123; console.log(this.a);&#125;var obj = &#123; a: 2, foo: foo&#125;;var bar = obj.foo;var a = "oops, global";bar(); // oops, global 123456789101112function foo() &#123; console.log(this.a);&#125;function doFoo(fn) &#123; fn();&#125;var obj = &#123; a: 2, foo: foo&#125;;var a = "global";doFoo(obj.foo) //global 123456789function foo() &#123; console.log(this.a);&#125;var obj = &#123; a: 2, foo: foo&#125;;var a = "global";setTimeout(obj.foo, 100); // global JavaScript中内置的setTimeout()函数实现和下面的伪代码类似：123function setTimeout(fn, delay) &#123; fn();&#125; 当函数传入回调或者是语言内置函数时，会丢失this绑定，此时this为默认绑定方式。 显示绑定 使用call(..)和apply(..)方法。它们的第一个参数是一个对象，在调用函数时将其绑定到this。1234567function foo() &#123; console.log(this.a);&#125;var obj = &#123; a: 2&#125;;foo.call(obj); //2 但显示绑定无法解决绑定丢失的问题。 硬绑定1234567891011function foo() &#123; console.log(this.a);&#125;var obj = &#123; a: 2&#125;;var bar = function() &#123; foo.call(obj);&#125;;bar(); //2setTimeout(bar, 100); //2 硬绑定的bar不可能在修改它的this。 ES5中提供了内置方法Function.prototype.bind bind(..)会返回一个硬编码的新函数，会把指定的参数设置为this的上下文并调用原始函数。 forEach等API调用的”上下文”作用和bind一样，其实实际上就是通过call(..)或者apply(..)实现了显示绑定。 new绑定12345function foo(a) &#123; this.a = a;&#125;var bar = new foo(2);console.log(bar.a) //2 使用new来调用函数时，会构造一个新对象并把它绑定到foo(..)调用的this上。 优先级 new绑定 &gt; 显示绑定 &gt; 隐式绑定 &gt; 默认绑定 例外情况 如果将null和undefined作为this的绑定对象传入call、apply或者bind，这些值会被忽略，实际应用的是默认绑定。 箭头函数12345678910111213function foo() &#123; return (a) =&gt; &#123; console.log(this.a); &#125;;&#125;var obj1 = &#123; a: 2&#125;;var obj2 = &#123; a: 3&#125;;var bar = foo.call(obj1);bar.call(obj2); //2 箭头函数的this继承自它的父级，它的绑定无法更改。(new也不行) 总结1.由new调用，绑定到新创建的对象。 2.由call、apply或者bind调用，绑定到指定的对象。 3.由上下文对象调用，绑定到那个上下文对象。 4.默认，在严格模式下绑定到undefined，否则绑定到全局对象。]]></content>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-27T13:55:31.000Z</updated>
+  <updated>2018-03-28T16:23:52.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>二叉树层序遍历</title>
+    <link href="http://yoursite.com/2018/03/28/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/"/>
+    <id>http://yoursite.com/2018/03/28/二叉树层序遍历/</id>
+    <published>2018-03-28T15:51:21.000Z</published>
+    <updated>2018-03-28T16:23:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>例题</strong></p><blockquote><p>(LeetCode)107. Binary Tree Level Order Traversal II</p></blockquote><a id="more"></a><p><strong>方法</strong></p><pre><code>定义TreeNode存储每个节点和它对应的层级。队列q用于辅助。</code></pre><p><strong>代码</strong></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(node, level)&#123;</span><br><span class="line">        <span class="keyword">this</span>.node = node;</span><br><span class="line">        <span class="keyword">this</span>.level = level;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> levelOrderBottom = <span class="function"><span class="keyword">function</span>(<span class="params">root</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> res = [];</span><br><span class="line">    <span class="keyword">let</span> q = [];</span><br><span class="line">    <span class="keyword">if</span>(root === <span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    q.push(<span class="keyword">new</span> TreeNode(root, <span class="number">0</span>));</span><br><span class="line">    <span class="keyword">while</span>(q.length &gt; <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">let</span> tNode = q.shift();</span><br><span class="line">        <span class="keyword">let</span> node = tNode.node;</span><br><span class="line">        <span class="keyword">let</span> level = tNode.level;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(level === res.length)&#123;</span><br><span class="line">            res.push([]);</span><br><span class="line">        &#125;</span><br><span class="line">        res[level].push(node.val);</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">if</span>(node.left)&#123;</span><br><span class="line">            q.push(<span class="keyword">new</span> TreeNode(node.left,level+<span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(node.right)&#123;</span><br><span class="line">            q.push(<span class="keyword">new</span> TreeNode(node.right,level+<span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res.reverse()</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;例题&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;(LeetCode)107. Binary Tree Level Order Traversal II&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="数据结构与算法" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/LeetCode/"/>
+    
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    
+      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="树" scheme="http://yoursite.com/tags/%E6%A0%91/"/>
+    
+      <category term="二叉树层序遍历" scheme="http://yoursite.com/tags/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/"/>
+    
+  </entry>
   
   <entry>
     <title>JS中this是什么</title>
