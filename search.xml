@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[js实现继承]]></title>
+    <url>%2F2018%2F05%2F02%2Fjs%E5%AE%9E%E7%8E%B0%E7%BB%A7%E6%89%BF%2F</url>
+    <content type="text"><![CDATA[前言 一些操作符的区别 in : 判断属性是否在实例以及实例所在的原型链上 object.hasOwnProperty() 只在属性存在于实例上时返回trun instanceof 判断一个属性是否是某个对象的实例 完美继承 12345678910111213function Parent() &#123; this.name = 'parent'; this.play = [1,2,3];&#125;//Child 继承 Parentfunction Child() &#123; Parent.call(this); this.type = 'child';&#125;Child.prototype = Object.create(Parent.prototype);Child.prototype.constructor = Child;let s = new Child();]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+        <tag>原型链</tag>
+        <tag>继承</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[css实现元素垂直居中]]></title>
     <url>%2F2018%2F04%2F03%2Fcss%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%2F</url>
     <content type="text"><![CDATA[一.已知子元素宽高123456789101112131415161718192021222324&lt;h1&gt;已知宽高的情况下&lt;/h1&gt;&lt;section class="first"&gt; &lt;style&gt; .parent&#123; width:400px; height:400px; background: red; position: relative; &#125; .child&#123; position: absolute; width: 100px; height: 100px; background: yellow; top: 150px; left: 150px; &#125; &lt;/style&gt; &lt;div class="parent"&gt; &lt;div class="child"&gt; &lt;/div&gt; &lt;/div&gt;&lt;/section&gt; 二.子元素宽高未知 12345678910111213141516171819202122232425&lt;h1&gt;子元素宽高未知1&lt;/h1&gt; &lt;section class="first"&gt; &lt;style&gt; .parent&#123; width:400px; height:400px; background: red; position: relative; &#125; .child&#123; position: absolute; background: yellow; width: 100px; height: 150px; top: 200px; left: 200px; transform: translate(-50%,-50%); &#125; &lt;/style&gt; &lt;div class="parent"&gt; &lt;div class="child"&gt; &lt;/div&gt; &lt;/div&gt;&lt;/section&gt; 123456789101112131415161718192021222324252627&lt;h1&gt;子元素宽高未知2&lt;/h1&gt; &lt;section class="first"&gt; &lt;style&gt; .parent&#123; width:400px; height:400px; background: red; position: relative; &#125; .child&#123; position: absolute; background: yellow; width: 100px; height: 150px; top: 0; left: 0; right: 0; bottom: 0; margin: auto; &#125; &lt;/style&gt; &lt;div class="parent"&gt; &lt;div class="child"&gt; &lt;/div&gt; &lt;/div&gt;&lt;/section&gt; 三.使用table-ceil 123456789101112131415161718192021222324&lt;h1&gt;table-ceil&lt;/h1&gt; &lt;section class="first"&gt; &lt;style&gt; .parent&#123; width:400px; height:400px; border: 1px solid red; display: table-cell; vertical-align: middle; text-align: center; &#125; .child&#123; display: inline-block; width:50px; height:50px; background: blue; &#125; &lt;/style&gt; &lt;div class="parent"&gt; &lt;div class="child"&gt; &lt;/div&gt; &lt;/div&gt;&lt;/section&gt; 四.使用flexbox 1234567891011121314151617181920212223&lt;h1&gt;flexbox&lt;/h1&gt; &lt;section class="first"&gt; &lt;style&gt; .parent&#123; width:400px; height:400px; background: yellow; display: flex; justify-content: center; align-items: center; &#125; .child&#123; width: 50px; height: 60px; background: blue; &#125; &lt;/style&gt; &lt;div class="parent"&gt; &lt;div class="child"&gt; &lt;/div&gt; &lt;/div&gt;&lt;/section&gt;]]></content>

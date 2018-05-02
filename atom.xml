@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-03T11:59:50.000Z</updated>
+  <updated>2018-05-02T01:38:03.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>js实现继承</title>
+    <link href="http://yoursite.com/2018/05/02/js%E5%AE%9E%E7%8E%B0%E7%BB%A7%E6%89%BF/"/>
+    <id>http://yoursite.com/2018/05/02/js实现继承/</id>
+    <published>2018-05-02T01:08:37.000Z</published>
+    <updated>2018-05-02T01:38:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul><li><p>一些操作符的区别</p><pre><code>in : 判断属性是否在实例以及实例所在的原型链上object.hasOwnProperty() 只在属性存在于实例上时返回truninstanceof 判断一个属性是否是某个对象的实例</code></pre></li></ul><h1 id="完美继承"><a href="#完美继承" class="headerlink" title="完美继承"></a>完美继承</h1><a id="more"></a><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = <span class="string">'parent'</span>;</span><br><span class="line">  <span class="keyword">this</span>.play = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//Child 继承 Parent</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  Parent.call(<span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">this</span>.type = <span class="string">'child'</span>;</span><br><span class="line">&#125;</span><br><span class="line">Child.prototype = <span class="built_in">Object</span>.create(Parent.prototype);</span><br><span class="line">Child.prototype.constructor = Child;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> s = <span class="keyword">new</span> Child();</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;一些操作符的区别&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;in : 判断属性是否在实例以及实例所在的原型链上
+object.hasOwnProperty() 只在属性存在于实例上时返回trun
+instanceof 判断一个属性是否是某个对象的实例
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;完美继承&quot;&gt;&lt;a href=&quot;#完美继承&quot; class=&quot;headerlink&quot; title=&quot;完美继承&quot;&gt;&lt;/a&gt;完美继承&lt;/h1&gt;
+    
+    </summary>
+    
+      <category term="javascript" scheme="http://yoursite.com/categories/javascript/"/>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+      <category term="原型链" scheme="http://yoursite.com/tags/%E5%8E%9F%E5%9E%8B%E9%93%BE/"/>
+    
+      <category term="继承" scheme="http://yoursite.com/tags/%E7%BB%A7%E6%89%BF/"/>
+    
+  </entry>
   
   <entry>
     <title>css实现元素垂直居中</title>
