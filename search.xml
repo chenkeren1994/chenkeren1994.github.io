@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[直播原理]]></title>
+    <url>%2F2018%2F06%2F06%2F%E7%9B%B4%E6%92%AD%E5%8E%9F%E7%90%86%2F</url>
+    <content type="text"><![CDATA[直播协议 HLS协议 RTMP协议 HTTP-FLV协议 浏览器对视频格式的支持 HLS协议 直播协议 video解析M3U8文件，得到.ts片段，每个片段就是直播流的分段。在达到播放时长之前，video会重新请求M3U8文件，得到新的.ts片段。 ps:M3U8文件里也可以是嵌套的一层M3U8文件。 M3U8文件 动态列表：用于直播，通过不断请求不同的M3U8文件进行实时播放 静态列表：一般不用（TYPE-EVENT） 全量列表：点播，M3U8文件拿到后就不会发生改变（PLAYLIST-TYPE:VOD,#EXT-X-ENDLIST） TS文件 PAT包：指向PMT包 PMT包：告知TS包中的哪些是视频，哪些是音频 PES：由很多TS包组成，连续的TS包组成一个帧 TS：TS中的header字段包含了TS包的信息（视频or音频等等） RTMP协议 基于TCP协议 实时性较差 HTTP-FLV协议 基于HTTP 在一定程度上可以避免防火墙干扰 兼容HTTP 302 使用HTTPS加密通道 很好的支持移动端]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[HTTP协议原理]]></title>
     <url>%2F2018%2F06%2F03%2FHTTP%E5%8D%8F%E8%AE%AE%E5%8E%9F%E7%90%86%2F</url>
     <content type="text"><![CDATA[HTTP协议原理 简单应用 输入URL打开网页 AJAX获取数据 img标签加载图片 网络协议分层 物理层：定义物理设备如何传输数据（网线、光缆等） 数据链路层：通讯实体之间建立数据链路的链接（传输010101之类…） 网络层：为数据在节点之间传输建立逻辑链路 传输层：向用户提供可靠的端到端的服务，向高层屏蔽了下层数据传输的细节 应用层：为应用软件提供服务，构建于TCP协议之上，屏蔽网络传输相关细节 HTTP发展历史 HTTP/0.9：只有GET命令，无HEADER等描述信息，服务器发送完毕就关闭TCP连接 HTTP/1.0：增加很多命令，增加status code和header，多字符集发送、多部分发送、权限、缓存等 HTTP/1.1：持久连接，pipeline，增加host和其他命令 HTTP/2：所有数据以二进制传输，同一个连接发送的请求不再需要按顺序来，头信息压缩以及推送等提高效率的功能（服务端主动发送信息给客户端） 三次握手1作用：防止服务端开启无用连接 时序图 URI、URL、URN URI：统一资源标志符，用来表示互联网上唯一的资源包括URL和URN URL：统一资源定位器，例：http://user:pass@host.com:80/path?query=string#hash URN：永久统一资源定位符，在资源移动之后还能找到，目前还没有成熟的使用方案 HTTP报文 起始行： 请求方法 请求地址 协议版本 / 协议版本 状态码 状态码代表的含义 首部 空行：区分首部与主体 主体HTTP方法 用来定义对于资源的操作 常见的有GET、POSTHTTP CODE 定义服务器对请求的处理结果 各个区间的code有各自的语义 好的HTTP服务可以通过CODE判断响应结果 使用node创建一个简单服务12345678const http = require(&apos;http&apos;)http.createServer(function(request, response)&#123; console.log(&apos;request come&apos;, request.url) response.end(&apos;123&apos;)&#125;).listen(8888)console.log(&apos;server listening on 8888&apos;) CORS跨域请求以及预请求 CORS跨域：在服务端设置 ‘Access-Control-Allow-Origin’: ‘*(或域名)’ CORS预请求：在服务端设置 ‘Access-Control-Allow-[Header/Methods]’:’[X-Test-***/PUT]’CORS预请求 允许方法：GET、HEAD、POST 允许Content-Type：text/plain、multipart/form-data、application/x-www-form-urlencode 其他限制：请求头限制(Accept、Accept-Language、Content-Type、Content-Language）123在预请求中，客户端会首先发送一个OPTIONS方法的请求，来获得服务端的一个认可。设置&apos;Access-Control-Max-Age&apos;:&apos;1000&apos;表示在1000时间内，不必要发送预请求 Cache-Control 可缓存性 public：http经过的任何地方都可以缓存 private：只有发起请求的浏览器可以缓存 no-cache：本地可以存缓存，但缓存要等服务器验证后才能使用到期 max-age=(seconds)：浏览器端生效 s-maxage=(seconds)：只在代理服务器生效 max-stale=(seconds)：在设置的时间内可以使用过期的缓存重新验证 must-revalidate：如果max-age过期，必须去原服务端重新发送请求 proxy-revalidate：用在缓存服务器其他 no-store：不可存储缓存 no-transform：告知代理服务器不要改变缓存内容资源验证验证头 Last-Modified：上次修改时间，配合If-Modified-Since使用 Etag：数据签名（数据修改-&gt;导致唯一签名变化）配合If-Match使用 Cookie和SessionCookie 服务端通过Set-Cookie设置 下次请求会自动带上 键值对，可设置多个 属性 max-age和expire设置过期时间 Secure只在https时发送 HttpOnly无法通过document.cookie访问 domain=.test.com表示test.com下的所有二级域名都可以访问到这个cookie 长连接 Connection: keep-alive/close 数据协商客户端发送请求时，会声明数据格式和数据限制，服务端会根据这个请求进行判断 Accept：声明数据类型 Accept-Encoding：声明数据编码方式，主要用于限制服务端的压缩方法 Accept-Language：判断语言 User-Agent：判断返回的页面时PC端还是移动端Content Content-Type：服务端返回的数据格式 Content-Encoding：服务端的数据压缩方式 Content-Language：声明语言 Redirect状态码：302 ‘Location’: ‘/newUrl’ 301：永久重定向（在浏览器端就对url进行修改，浏览器会对路由进行缓存，慎重去做） 302：临时重定向（每次请求都要经过服务端的跳转） Content-Security-Policy在服务端设置header 作用 限制资源获取 报告资源获取越权 限制方式 default-src限制全局 制定资源类型 资源类型 connect-src img-src font-src … 例子 ‘Content-Security-Policy’: ‘default-src http: https:’ ‘Content-Security-Policy’: ‘default-src \’self\’’ ‘Content-Security-Policy’: ‘form-action \’self\’’ 可以设置向服务器汇报限制规则内的请求 ‘Content-Security-Policy’: ‘default-src \’self\’;report-uri /report’ 也可以在meta标签设置 HTTPS加密 公钥私钥加密]]></content>
@@ -62,20 +67,6 @@
       <tags>
         <tag>js</tag>
         <tag>this</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[关于JS闭包的理解]]></title>
-    <url>%2F2018%2F03%2F27%2FJS%E9%97%AD%E5%8C%85%2F</url>
-    <content type="text"><![CDATA[词法作用域12345678function init()&#123; var a = "seal"; function show()&#123; alert(a); &#125; show();&#125;init(); // seal init()创建了一个局部变量a和一个show函数。show()是定义在init()内部的函数，仅在该函数体内可用。show()内没有自己的局部变量，然而它可以访问到外部函数的变量，所以show()可以使用父函数init()中声明的变量a。但是，如果有同名变量a在show()中被定义，则会使用的show()中定义的a` 。 词法作用域中使用的域，是变量在代码中声明的位置所决定的。嵌套的函数可以访问在其外部声明的变量。 闭包 函数对象可以通过作用域链相互关联起来，函数体内部的变量都可以保存在函数作用域内，这种特性在计算机科学文献中称为闭包。 引用维基百科：闭包（Closure）是词法闭包（Lexical Closure）的简称，是引用了自由变量的函数。这个被引用的自由变量将和这个函数一同存在，即使已经离开了创造它的环境也不例外。 123456var a = function () &#123; var test = &#123;&#125;; setTimeout(function () &#123; console.log(test); &#125;, 1000);&#125; 上面的例子中，test在a中定义，但在setTimeout的参数（函数）中对它保持了引用。当a被执行了，尽管a已经执行完（已经执行完），理论上来说a这个函数执行过程中产生的变量、对象都可以被销毁。但test由于被引用，所以不能随这个函数执行结束而被销毁，直到定时器里的函数被执行掉。 12345678910111213function counter()&#123; var n = 0; return &#123; count: function()&#123;return n++;&#125;, reset: function() &#123;n = 0;&#125; &#125;;&#125;var c = counter(),d = counter();c.count() //0d.count() //0c.reset() c.count() //0d.count() //1 同一作用域下的闭包之间可以共享变量，不同作用域之间互不干扰。 123456789function constfuncs()&#123; var funcs = []; for(var i = 0;i &lt; 10; i++)&#123; funcs[i] = function()&#123;return i;&#125;; &#125; return funcs;&#125;var funcs = constfuncs();funcs[5]() 上述代码创建了10个闭包，并将其放在数组中，因此它们可以共享变量i。]]></content>
-      <categories>
-        <category>js</category>
-        <category>javaScript</category>
-      </categories>
-      <tags>
-        <tag>js</tag>
-        <tag>闭包</tag>
-        <tag>私有变量</tag>
       </tags>
   </entry>
   <entry>

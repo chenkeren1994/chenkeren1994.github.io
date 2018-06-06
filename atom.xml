@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-03T02:21:19.000Z</updated>
+  <updated>2018-06-06T10:54:20.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>直播原理</title>
+    <link href="http://yoursite.com/2018/06/06/%E7%9B%B4%E6%92%AD%E5%8E%9F%E7%90%86/"/>
+    <id>http://yoursite.com/2018/06/06/直播原理/</id>
+    <published>2018-06-06T10:38:11.000Z</published>
+    <updated>2018-06-06T10:54:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="直播协议"><a href="#直播协议" class="headerlink" title="直播协议"></a>直播协议</h1><p><img src="http://ospl0tuzl.bkt.clouddn.com/%E7%9B%B4%E6%92%AD%E5%8E%9F%E7%90%86.png" alt="01"><br><a id="more"></a></p><ul><li>HLS协议</li><li>RTMP协议</li><li>HTTP-FLV协议</li></ul><h2 id="浏览器对视频格式的支持"><a href="#浏览器对视频格式的支持" class="headerlink" title="浏览器对视频格式的支持"></a>浏览器对视频格式的支持</h2><p><img src="http://ospl0tuzl.bkt.clouddn.com/%E6%B5%8F%E8%A7%88%E5%99%A8.png" alt="07"></p><h2 id="HLS协议"><a href="#HLS协议" class="headerlink" title="HLS协议"></a>HLS协议</h2><p><img src="http://ospl0tuzl.bkt.clouddn.com/hls1.png" alt="02"></p><p>直播协议</p><p>video解析M3U8文件，得到<em>.ts片段，每个片段就是直播流的分段。在达到播放时长之前，video会重新请求M3U8文件，得到新的</em>.ts片段。</p><p>ps:M3U8文件里也可以是嵌套的一层M3U8文件。</p><p>M3U8文件</p><ul><li>动态列表：用于直播，通过不断请求不同的M3U8文件进行实时播放<br><img src="http://ospl0tuzl.bkt.clouddn.com/hls.png" alt="06"></li><li>静态列表：一般不用（TYPE-EVENT）<br><img src="http://ospl0tuzl.bkt.clouddn.com/jt.png" alt="08"></li><li>全量列表：点播，M3U8文件拿到后就不会发生改变（PLAYLIST-TYPE:VOD,#EXT-X-ENDLIST）<br><img src="http://ospl0tuzl.bkt.clouddn.com/ql.png" alt="09"></li></ul><p>TS文件<br><img src="http://ospl0tuzl.bkt.clouddn.com/hls-ts.png" alt="03"></p><ul><li>PAT包：指向PMT包</li><li>PMT包：告知TS包中的哪些是视频，哪些是音频</li><li>PES：由很多TS包组成，连续的TS包组成一个帧</li><li>TS：TS中的header字段包含了TS包的信息（视频or音频等等）</li></ul><h2 id="RTMP协议"><a href="#RTMP协议" class="headerlink" title="RTMP协议"></a>RTMP协议</h2><p><img src="http://ospl0tuzl.bkt.clouddn.com/RTMP.png" alt="04"></p><ul><li>基于TCP协议</li><li>实时性较差</li></ul><h2 id="HTTP-FLV协议"><a href="#HTTP-FLV协议" class="headerlink" title="HTTP-FLV协议"></a>HTTP-FLV协议</h2><p><img src="http://ospl0tuzl.bkt.clouddn.com/httpflv.png" alt="05"></p><ul><li>基于HTTP</li><li>在一定程度上可以避免防火墙干扰</li><li>兼容HTTP 302</li><li>使用HTTPS加密通道</li><li>很好的支持移动端</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;直播协议&quot;&gt;&lt;a href=&quot;#直播协议&quot; class=&quot;headerlink&quot; title=&quot;直播协议&quot;&gt;&lt;/a&gt;直播协议&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;http://ospl0tuzl.bkt.clouddn.com/%E7%9B%B4%E6%92%AD%E5%8E%9F%E7%90%86.png&quot; alt=&quot;01&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>HTTP协议原理</title>
@@ -154,34 +172,6 @@ instanceof 判断一个属性是否是某个对象的实例
       <category term="js" scheme="http://yoursite.com/tags/js/"/>
     
       <category term="this" scheme="http://yoursite.com/tags/this/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于JS闭包的理解</title>
-    <link href="http://yoursite.com/2018/03/27/JS%E9%97%AD%E5%8C%85/"/>
-    <id>http://yoursite.com/2018/03/27/JS闭包/</id>
-    <published>2018-03-27T01:45:29.000Z</published>
-    <updated>2018-03-27T03:10:09.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="词法作用域"><a href="#词法作用域" class="headerlink" title="词法作用域"></a>词法作用域</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">init</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="string">"seal"</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(a);</span><br><span class="line">    &#125;</span><br><span class="line">    show();</span><br><span class="line">&#125;</span><br><span class="line">init();  <span class="comment">// seal</span></span><br></pre></td></tr></table></figure><a id="more"></a><p><code>init()</code>创建了一个局部变量a<code>和一个</code>show<code>函数。</code>show()<code>是定义在</code>init()<code>内部的函数，仅在该函数体内可用。</code>show()<code>内没有自己的局部变量，然而它可以访问到外部函数的变量，所以</code>show()<code>可以使用父函数</code>init()<code>中声明的变量</code>a<code>。但是，如果有同名变量</code>a<code>在</code>show()<code>中被定义，则会使用的</code>show()<code>中定义的</code>a` 。</p><blockquote><p>词法作用域中使用的域，是变量在代码中声明的位置所决定的。嵌套的函数可以访问在其外部声明的变量。</p></blockquote><h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><blockquote><p>函数对象可以通过作用域链相互关联起来，函数体内部的变量都可以保存在函数作用域内，这种特性在计算机科学文献中称为闭包。</p><p>引用维基百科：<strong>闭包</strong>（<em>Closure</em>）是<strong>词法闭包</strong>（<em>Lexical Closure</em>）的简称，是引用了自由变量的函数。这个被引用的自由变量将和这个函数一同存在，即使已经离开了创造它的环境也不例外。</p></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> test = &#123;&#125;;</span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(test);</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>上面的例子中，test在a中定义，但在setTimeout的参数（函数）中对它保持了引用。当a被执行了，尽管a已经执行完（已经执行完），理论上来说a这个函数执行过程中产生的变量、对象都可以被销毁。但test由于被引用，所以不能随这个函数执行结束而被销毁，直到定时器里的函数被执行掉。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">counter</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        count: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span> n++;&#125;,</span><br><span class="line">        reset: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;n = <span class="number">0</span>;&#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> c = counter(),d = counter();</span><br><span class="line">c.count() <span class="comment">//0</span></span><br><span class="line">d.count() <span class="comment">//0</span></span><br><span class="line">c.reset() </span><br><span class="line">c.count() <span class="comment">//0</span></span><br><span class="line">d.count() <span class="comment">//1</span></span><br></pre></td></tr></table></figure><p>同一作用域下的闭包之间可以共享变量，不同作用域之间互不干扰。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">constfuncs</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> funcs = [];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; <span class="number">10</span>; i++)&#123;</span><br><span class="line">        funcs[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span> i;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> funcs;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> funcs = constfuncs();</span><br><span class="line">funcs[<span class="number">5</span>]()</span><br></pre></td></tr></table></figure><p>上述代码创建了10个闭包，并将其放在数组中，因此它们可以共享变量i。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;词法作用域&quot;&gt;&lt;a href=&quot;#词法作用域&quot; class=&quot;headerlink&quot; title=&quot;词法作用域&quot;&gt;&lt;/a&gt;词法作用域&lt;/h2&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;init&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a = &lt;span class=&quot;string&quot;&gt;&quot;seal&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;show&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        alert(a);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    show();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;init();  &lt;span class=&quot;comment&quot;&gt;// seal&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="js" scheme="http://yoursite.com/categories/js/"/>
-    
-      <category term="javaScript" scheme="http://yoursite.com/categories/js/javaScript/"/>
-    
-    
-      <category term="js" scheme="http://yoursite.com/tags/js/"/>
-    
-      <category term="闭包" scheme="http://yoursite.com/tags/%E9%97%AD%E5%8C%85/"/>
-    
-      <category term="私有变量" scheme="http://yoursite.com/tags/%E7%A7%81%E6%9C%89%E5%8F%98%E9%87%8F/"/>
     
   </entry>
   
